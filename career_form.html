@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Career Assessment</title>
+    <link rel="stylesheet" href="career_form.css">
+
+</head>
+
+<body>
+    <h2>Career Path Assessment</h2>
+    <form action="career_form.php" method="post">
+        <label for="interests_excitement">What excites you the most?</label>
+        <select name="interests_excitement" id="interests_excitement">
+            <option value="A">Building something new from scratch </option>
+            <option value="B">Researching and learning more in-depth knowledge </option>
+            <option value="C">Applying your skills in a company to solve real-world problems </option>
+        </select><br>
+
+        <label for="working_style">Do you enjoy taking risks?</label>
+        <select name="working_style" id="working_style">
+            <option value="A">Yes, I thrive in uncertain environments</option>
+            <option value="B">I prefer minimizing risks through deeper knowledge </option>
+            <option value="C">I prefer stable environments with clear outcomes</option>
+        </select><br>
+
+        <label for="enjoy_risk">Which of these best describes your skills?</label>
+        <select name="enjoy_risk" id="enjoy_risk">
+            <option value="A">Leadership and innovation</option>
+            <option value="B"> Analytical thinking and research</option>
+            <option value="C">Technical expertise and teamwork</option>
+        </select><br>
+
+        <label for="skills_description">How do you feel about managing people and resources?</label>
+        <select name="skills_description" id="skills_description">
+            <option value="A">I feel confident and enjoy managing teams </option>
+            <option value="B">I prefer focusing on academic work rather than managing people </option>
+            <option value="C"> I can manage small tasks but prefer working in a team structure </option>
+        </select><br>
+
+        <label for="managing_people">What's your level of interest in solving real-world problems?</label>
+        <select name="managing_people" id="managing_people">
+            <option value="A"> I want to solve problems through innovative products or services</option>
+            <option value="B">I want to explore solutions through in-depth research and development</option>
+            <option value="C">I want to solve problems by working with companies and projects</option>
+        </select><br>
+
+        <label for="five_years_vision">Where do you see yourself in 5 years?</label>
+        <select name="five_years_vision" id="five_years_vision">
+            <option value="A">Running my own business</option>
+            <option value="B">Working on cutting-edge research or getting a PhD</option>
+            <option value="C">Working in a reputed company or rising through the ranks</option>
+        </select><br>
+
+        <label for="excites_most">Which of the following excites you the most?</label>
+        <select name="excites_most" id="excites_most">
+            <option value="A"> Creating a business that solves market needs </option>
+            <option value="B">Becoming an expert or professor in your field</option>
+            <option value="C">Climbing the corporate ladder and gaining promotions</option>
+        </select><br>
+
+        <label for="financial_stability">How important is financial stability to you right now?</label>
+        <select name="financial_stability" id="financial_stability">
+            <option value="A"> I'm okay with uncertainty if it leads to success later </option>
+            <option value="B">I'm willing to invest in further studies even if it delays financial stability </option>
+            <option value="C">Financial stability is my priority, and I prefer earning right away</option>
+        </select><br>
+
+        <label for="education_loan">Are you considering or have you taken an education loan?</label>
+        <select name="education_loan" id="education_loan">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br>
+
+        <label for="loan_amount">If yes, what is the approximate loan amount?</label>
+        <select name="loan_amount" id="loan_amount">
+            <option value="Low">Less than Rs 2 Lakhs </option>
+            <option value="Medium">Rs 2 Lakhs - Rs 5 Lakhs </option>
+            <option value="High">Rs 5 Lakhs and above</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

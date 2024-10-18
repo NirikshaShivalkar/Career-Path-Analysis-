@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="dashboard1.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2>User Dashboard</h2>
+        <ul>
+            <li><a href="#personal-info" onclick="showSection('personal-info')">Personal Information</a></li>
+            <li><a href="#education" onclick="showSection('education')">Educational Background</a></li>
+            <li><a href="#skills" onclick="showSection('skills')">Skills and Competencies</a></li>
+            <li><a href="#family-background" onclick="showSection('family-background')">Family Background</a></li>
+            <li><a href="career_form.html">Career Path Analysis</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="content">
+        <form id="form" method="POST" action="dashboard1.php">
+            <section id="personal-info" class="form-section">
+                <h2>Personal Information</h2>
+                <label for="name1">Full Name</label>
+                <input type="text" id="name1" name="name1" required>
+
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="mobile">Mobile Number</label>
+                <input type="text" id="mobile" name="mobile" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="button" class="next-button" onclick="showSection('education')">Next</button>
+            </section>
+
+            <section id="education" class="form-section">
+                <h2>Educational Information</h2>
+                <label for="branch">Branch/Discipline</label>
+                <select id="branch" name="branch" required>
+                    <option value="" disabled selected>Select your branch</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="grad_year">Graduation Year</label>
+                <select id="grad_year" name="grad_year" required>
+                    <option value="" disabled selected>Select your graduation year</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                </select>
+
+                <label for="cgpa">Current CGPA</label>
+                <input type="number" id="cgpa" name="cgpa" step="0.01" min="0" max="10" required>
+
+                <button type="button" class="prev-button" onclick="showSection('personal-info')">Previous</button>
+                <button type="button" class="next-button" onclick="showSection('skills')">Next</button>
+            </section>
+
+            <section id="skills" class="form-section">
+                <h2>Skills and Competencies</h2>
+                <label for="tech_skills">Technical Skills</label>
+                <textarea id="tech_skills" name="tech_skills" rows="4"
+                    placeholder="List your technical skills"></textarea>
+
+                <label for="soft_skills">Soft Skills</label>
+                <textarea id="soft_skills" name="soft_skills" rows="4" placeholder="List your soft skills"></textarea>
+
+                <label for="certifications">Certifications or Online Courses</label>
+                <textarea id="certifications" name="certifications" rows="3"
+                    placeholder="List any certifications or courses"></textarea>
+
+                <label for="projects">Projects</label>
+                <textarea id="projects" name="projects" rows="4" placeholder="Describe your projects"></textarea>
+
+                <button type="button" class="prev-button" onclick="showSection('education')">Previous</button>
+                <button type="button" class="next-button" onclick="showSection('family-background')">Next</button>
+            </section>
+
+            <section id="family-background" class="form-section">
+                <h2>Family Background</h2>
+                <label for="loan">Have you taken an education loan?</label>
+                <input type="radio" id="loan_yes" name="loan" value="Yes" required onclick="toggleLoanAmount(true)">
+                <label for="loan_yes" style="display:inline;">Yes</label>
+                <input type="radio" id="loan_no" name="loan" value="No" required onclick="toggleLoanAmount(false)">
+                <label for="loan_no" style="display:inline;">No</label>
+
+                <label for="loan_amount">If yes, what is the loan amount?</label>
+                <select id="loan_amount" name="loan_amount" disabled required>
+                    <option value="" disabled selected>Select loan amount</option>
+                    <option value="Less than 2 Lakhs">Less than Rs 2 Lakhs</option>
+                    <option value="Between 2-5 Lakhs">Between Rs 2-5 Lakhs</option>
+                    <option value="More than 5 Lakhs">More than Rs 5 Lakhs</option>
+                </select>
+
+                <script>
+                    function toggleLoanAmount(isLoan) {
+                        const loanAmountSelect = document.getElementById('loan_amount');
+                        loanAmountSelect.disabled = !isLoan; // Enable or disable based on loan selection
+                        if (!isLoan) {
+                            loanAmountSelect.selectedIndex = 0; // Reset the selection if disabled
+                        }
+                    }
+                </script>
+
+
+                <label for="income">Family Income Bracket</label>
+                <select id="income" name="income" required>
+                    <option value="" disabled selected>Select income bracket</option>
+                    <option value="Less than Rs 3 Lakhs">Less than Rs 3 Lakhs</option>
+                    <option value="Rs 3-6 Lakhs">Rs 3-6 Lakhs</option>
+                    <option value="Rs 6-10 Lakhs">Rs 6-10 Lakhs</option>
+                    <option value="More than Rs 10 Lakhs">More than Rs 10 Lakhs</option>
+                </select>
+
+                <button type="button" class="prev-button" onclick="showSection('skills')">Previous</button>
+                <button type="button" class="next-button" onclick="showSection('personal-preferences')">Next</button>
+            </section>
+
+            <section id="personal-preferences" class="form-section">
+                <h2>Personal Preferences</h2>
+                <label for="hobbies">Hobbies and Interests</label>
+                <input type="text" id="hobbies" name="hobbies" required>
+                <span class="error-message" id="hobbies-error"></span>
+
+                <label for="work-environment">Preferred Work Environment</label>
+                <input type="text" id="work-environment" name="work-environment" required>
+                <span class="error-message" id="work-environment-error"></span>
+
+                <label for="relocation">Willingness to Relocate</label>
+                <select id="relocation" name="relocation" required>
+                    <option value="">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <span class="error-message" id="relocation-error"></span>
+
+                <label for="work-hours">Preferred Work Hours</label>
+                <input type="text" id="work-hours" name="work-hours" required>
+                <span class="error-message" id="work-hours-error"></span>
+
+                <button type="button" class="prev-button" onclick="showSection('family-background')">Previous</button>
+                <button type="submit">Submit</button>
+            </section>
+        </form>
+    </div>
+
+    <script src="dashboard1.js"></script>
+</body>
+
+</html>
